@@ -1,0 +1,174 @@
+[gd_scene load_steps=2 format=3 uid="uid://d7nma4leaw4h"]
+
+[ext_resource type="Script" path="res://sqlite_blob_loader.gd" id="1_mbfj0"]
+
+[node name="sqlite_blob_loader" type="Node"]
+script = ExtResource("1_mbfj0")
+
+[node name="TitleLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_right = 239.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 26
+text = "SQLite Blob Loader"
+
+[node name="SubtitleLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 33.0
+offset_right = 478.0
+offset_bottom = 56.0
+text = "Load images files to PackedByteArray for SQLite blob storage."
+
+[node name="OutputLabel" type="Label" parent="."]
+offset_left = 592.0
+offset_top = 49.0
+offset_right = 648.0
+offset_bottom = 72.0
+text = "Output"
+
+[node name="OutputText" type="TextEdit" parent="."]
+offset_left = 592.0
+offset_top = 74.0
+offset_right = 1146.0
+offset_bottom = 605.0
+theme_override_font_sizes/font_size = 12
+placeholder_text = "command results will go here"
+
+[node name="DatabaseLabel" type="Label" parent="."]
+offset_left = 54.0
+offset_top = 96.0
+offset_right = 127.0
+offset_bottom = 119.0
+text = "Database"
+
+[node name="DatabaseText" type="TextEdit" parent="."]
+offset_left = 54.0
+offset_top = 122.0
+offset_right = 264.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 12
+text = "res://data.db"
+
+[node name="TableLabel" type="Label" parent="."]
+offset_left = 54.0
+offset_top = 155.0
+offset_right = 127.0
+offset_bottom = 178.0
+text = "Table"
+
+[node name="TableText" type="TextEdit" parent="."]
+offset_left = 54.0
+offset_top = 181.0
+offset_right = 264.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 12
+text = "characters"
+
+[node name="ImagePathLabel" type="Label" parent="."]
+offset_left = 54.0
+offset_top = 270.0
+offset_right = 183.0
+offset_bottom = 293.0
+text = "Image Path Field"
+
+[node name="ImagePathText" type="TextEdit" parent="."]
+offset_left = 54.0
+offset_top = 296.0
+offset_right = 264.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 12
+text = "imagePath"
+
+[node name="IdLabel" type="Label" parent="."]
+offset_left = 54.0
+offset_top = 214.0
+offset_right = 183.0
+offset_bottom = 237.0
+text = "Id Field"
+
+[node name="IdText" type="TextEdit" parent="."]
+offset_left = 54.0
+offset_top = 240.0
+offset_right = 264.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 12
+text = "id"
+
+[node name="ImageBlobLabel" type="Label" parent="."]
+offset_left = 54.0
+offset_top = 327.0
+offset_right = 183.0
+offset_bottom = 350.0
+text = "Image Blob Field"
+
+[node name="ImageBlobText" type="TextEdit" parent="."]
+offset_left = 54.0
+offset_top = 353.0
+offset_right = 264.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 12
+text = "imageBlob"
+
+[node name="FileTypeLabel" type="Label" parent="."]
+offset_left = 55.0
+offset_top = 405.0
+offset_right = 123.0
+offset_bottom = 428.0
+text = "Blob File Type"
+
+[node name="PngLabel" type="Label" parent="."]
+offset_left = 158.0
+offset_top = 434.0
+offset_right = 193.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 12
+text = "PNG"
+
+[node name="JpgLabel" type="Label" parent="."]
+offset_left = 95.0
+offset_top = 434.0
+offset_right = 124.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 12
+text = "JPG"
+
+[node name="SkipExisting" type="CheckButton" parent="."]
+offset_left = 47.0
+offset_top = 474.0
+offset_right = 91.0
+offset_bottom = 498.0
+
+[node name="FileType" type="CheckButton" parent="."]
+offset_left = 115.0
+offset_top = 431.0
+offset_right = 159.0
+offset_bottom = 455.0
+button_pressed = true
+
+[node name="SkipExistingLabel" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 473.0
+offset_right = 239.0
+offset_bottom = 496.0
+text = "Skip existing blobs"
+
+[node name="LoadBlobs" type="Button" parent="."]
+offset_left = 55.0
+offset_top = 519.0
+offset_right = 225.0
+offset_bottom = 550.0
+text = "Load blobs from files"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 619.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+step = 1.0
+
+[connection signal="pressed" from="LoadBlobs" to="." method="_on_load_blobs_pressed"]
